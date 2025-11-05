@@ -353,13 +353,6 @@ body {
   }
 }
 
-
-.tag.purple { background: #7b61ff; }
-.tag.green { background: #4caf50; }
-.tag.blue { background: #2196f3; }
-.tag.yellow { background: #ffca28; color: #333; }
-.tag.orange { background: #ff9800; }
-
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .collection-header {
@@ -372,7 +365,6 @@ body {
     width: 100%;
   }
 }
-
 
 /* ===== Responsive ===== */
 @media (max-width: 992px) {
