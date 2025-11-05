@@ -85,22 +85,77 @@ body {
 }
 
 
-/* Image Gallery */
+/* ===== Certificate Carousel (Resized & Clean) ===== */
 .image-gallery {
-  display: flex;
-  gap: 15px;
-  background: white;
+  position: relative;
+  width: 100%;
+  max-width: 600px;    /* controls overall size */
+  margin: 0 auto;      /* centers the carousel */
+  overflow: hidden;
   border-radius: 16px;
+  background: white;
   padding: 15px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  overflow-x: auto;
 }
 
-.image-gallery img {
-  width: 32%;
+/* Outer container that hides overflow */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
   border-radius: 12px;
-  object-fit: cover;
 }
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.carousel-track img {
+  flex: 0 0 100%;     /* each image takes full width */
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+}
+
+
+/* Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: 50%;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  transition: background 0.3s ease;
+  z-index: 2;
+}
+
+.carousel-btn:hover {
+  background: white;
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+/* Responsive size adjustments */
+@media (max-width: 768px) {
+  .carousel-track img {
+    height: 200px; /* smaller for mobile */
+  }
+}
+
+
 
 /* Top Event */
 .top-event {
