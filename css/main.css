@@ -445,6 +445,21 @@ body {
   color: #555;
 }
 
+/* footer section styling */
+footer {
+    background: #111;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+}
+footer span a {
+    color: #363533;
+    text-decoration: none;
+}
+footer span a:hover {
+    text-decoration: underline;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
   .collection-header {
