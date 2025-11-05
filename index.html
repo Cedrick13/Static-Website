@@ -17,15 +17,15 @@
 
   <hr>
 
-  <div class="sidebar-icons">
+ <div class="sidebar-icons">
     <a href="#home-section"><img src="Images/home (1).png" alt="Home"></a>
-    <a href="#bookmark"><img src="Images/bookmark-white.png" alt="Event"></a>
-    <a href="#activity"><img src="Images/calendar.png" alt="Event Collection"></a>
+    <a href="#event-section"><img src="Images/bookmark-white.png" alt="Event"></a>
+    <a href="#collection"><img src="Images/calendar.png" alt="Event Collection"></a>
   </div>
 </aside>
 
   <!-- Home Section -->
-    <section class="home-section">
+    <section id="home-section" class="home-section">
     <div class="left">
       <h2>Event Official</h2>
 
@@ -91,7 +91,7 @@
   </section>
 
   <!-- Event Section --> 
-  <section class="event-collection" id="collection">
+  <section id="event-section" class="event-collection">
   <div class="collection-header">
     <h2>Event Collection</h2>
   </div>
@@ -152,7 +152,7 @@
 </section>
 
   <!-- Event Collection Section -->
-<section class="event-collection">
+<section id="collection" class="event-collection">
   <div class="collection-header">
     <h2>Event Collection</h2>
     <!--<button class="filter-btn">
@@ -244,6 +244,29 @@
             document.getElementById("year").textContent = new Date().getFullYear();
         
 		</script>
+
+    <script>
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".sidebar-icons a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop - 150;
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === "#" + current) {
+      link.classList.add("active");
+    }
+  });
+});
+</script>
+
 
 </body>
 </html>
