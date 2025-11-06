@@ -6,36 +6,6 @@
         <title>Event Gallery</title>
         <link rel="stylesheet" href="css/look.css" />
         <link rel="icon" type="image/x-icon" href="Images/icon.png" />
-        <script>
-            // Disable right click
-            document.addEventListener("contextmenu", function (e) {
-                e.preventDefault();
-            });
-
-            // Disable certain key combinations
-            document.addEventListener("keydown", function (e) {
-                // F12
-                if (e.keyCode === 123) {
-                    e.preventDefault();
-                    return false;
-                }
-                // Ctrl+Shift+I (Inspect)
-                if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") {
-                    e.preventDefault();
-                    return false;
-                }
-                // Ctrl+U (View Source)
-                if (e.ctrlKey && e.key.toLowerCase() === "u") {
-                    e.preventDefault();
-                    return false;
-                }
-                // Ctrl+Shift+J (Console)
-                if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "j") {
-                    e.preventDefault();
-                    return false;
-                }
-            });
-        </script>
     </head>
     <body>
         <!-- Sidebar -->
@@ -218,7 +188,7 @@
             <div class="collection-header">
                 <h2>Event Collection</h2>
                 <!--<button class="filter-btn">
-      <i class="fa-solid fa-filter"></i> Filter
+    <i class="fa-solid fa-filter"></i> Filter
     </button>-->
             </div>
 
@@ -306,31 +276,5 @@
         </footer>
 
         <script src="js/main.js"></script>
-
-        <script>
-            document.getElementById("year").textContent = new Date().getFullYear();
-        </script>
-
-        <script>
-            const sections = document.querySelectorAll("section");
-            const navLinks = document.querySelectorAll(".sidebar-icons a");
-
-            window.addEventListener("scroll", () => {
-                let current = "";
-                sections.forEach((section) => {
-                    const sectionTop = section.offsetTop - 150;
-                    if (scrollY >= sectionTop) {
-                        current = section.getAttribute("id");
-                    }
-                });
-
-                navLinks.forEach((link) => {
-                    link.classList.remove("active");
-                    if (link.getAttribute("href") === "#" + current) {
-                        link.classList.add("active");
-                    }
-                });
-            });
-        </script>
     </body>
 </html>
