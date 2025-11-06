@@ -10,23 +10,44 @@ body {
   color: #222;
 }
 
+.right {
+  margin-top: 20px; /* optional */
+}
+
+.left {
+  margin-top: 20px;
+}
+
+
 /* ===== Layout ===== */
 .home-section {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr; /* left: right ratio */
+  gap: 30px;
+  padding: 40px 6%;
+  align-items: start;
+  background: #f9fafb;
+}
+
+/* Left Column (Gallery + Top Event) */
+.home-section .left {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 60px 5%;
-  gap: 40px;
+  flex-direction: column;
+  gap: 25px;
 }
 
-/* ===== Left Side ===== */
-.left {
-  flex: 1 1 55%;
+/* Right Column (Events) */
+.home-section .right {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
 }
 
-.left h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+/* Make it responsive */
+@media (max-width: 992px) {
+  .home-section {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ===== Sidebar ===== */
@@ -161,44 +182,64 @@ body {
 
 
 
-/* Top Event */
+/* --- Top Event Card --- */
 .top-event {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .top-event h3 {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
-.event-card {
-  display: flex;
-  align-items: center;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+.top-event-card {
+  position: relative;
+  width: 230px;              /* adjust size as needed */
+  height: 230px;
+  border-radius: 20px;
   overflow: hidden;
-  padding: 10px;
-  gap: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  cursor: pointer;
   transition: transform 0.3s ease;
 }
 
-.event-card:hover {
-  transform: scale(1.03);
+.top-event-card:hover {
+  transform: translateY(-5px);
 }
 
-.event-card img {
-  width: 120px;
-  border-radius: 12px;
+.top-event-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.event-text h4 {
+.top-event-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: #fff;
+}
+
+.top-event-info h4 {
   font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0;
 }
 
-.event-text p {
-  color: #666;
-  font-size: 0.9rem;
+.top-event-info h5 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 2px 0;
 }
+
+.top-event-info p {
+  font-size: 0.85rem;
+  margin: 0;
+  opacity: 0.9;
+}
+
 
 /* ===== Right Side ===== */
 .right {
