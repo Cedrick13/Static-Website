@@ -1,18 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Event Gallery</title>
-  <link rel="stylesheet" href="look.css">
-  <link rel="icon" type="image/x-icon" href="Images/icon.png">
-  	<script>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Event Gallery</title>
+        <link rel="stylesheet" href="look.css" />
+        <link rel="icon" type="image/x-icon" href="Images/icon.png" />
+        <script>
             // Disable right click
             document.addEventListener("contextmenu", function (e) {
                 e.preventDefault();
             });
 
-            // Disable certain key combinations  
+            // Disable certain key combinations
             document.addEventListener("keydown", function (e) {
                 // F12
                 if (e.keyCode === 123) {
@@ -35,284 +35,302 @@
                     return false;
                 }
             });
-        
-		</script>
-</head>
-<body>
+        </script>
+    </head>
+    <body>
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <img src="Images/logo.png" alt="Event Logo" />
+            </div>
 
-  <!-- Sidebar -->
-<aside class="sidebar">
-  <div class="sidebar-logo">
-    <img src="Images/logo.png" alt="Event Logo">
-  </div>
+            <hr />
 
-  <hr>
+            <div class="sidebar-icons">
+                <a href="#home-section"><img src="Images/home (1).png" alt="Home" /></a>
+                <a href="#event-section"><img src="Images/bookmark-white.png" alt="Event" /></a>
+                <a href="#collection"><img src="Images/calendar.png" alt="Event Collection" /></a>
+            </div>
+        </aside>
 
- <div class="sidebar-icons">
-    <a href="#home-section"><img src="Images/home (1).png" alt="Home"></a>
-    <a href="#event-section"><img src="Images/bookmark-white.png" alt="Event"></a>
-    <a href="#collection"><img src="Images/calendar.png" alt="Event Collection"></a>
-  </div>
-</aside>
+        <!-- Home Section -->
+        <section id="home-section" class="home-section">
+            <!-- LEFT COLUMN -->
+            <div class="left">
+                <h2>Event Gallery</h2>
 
-  <!-- Home Section -->
-   <section id="home-section" class="home-section">
-  <!-- LEFT COLUMN -->
-  <div class="left">
-    <h2>Event Gallery</h2>
+                <div class="image-gallery">
+                    <div class="carousel-container">
+                        <div class="carousel-track">
+                            <img src="Images/cert (1).png" alt="Certificate 1" />
+                            <img src="Images/cert (2).png" alt="Certificate 2" />
+                            <img src="Images/cert (3).png" alt="Certificate 3" />
+                        </div>
+                    </div>
+                    <!-- Carousel Controls -->
+                    <button class="carousel-btn prev">‹</button>
+                    <button class="carousel-btn next">›</button>
+                </div>
 
-    <div class="image-gallery">
-      <div class="carousel-container">
-        <div class="carousel-track">
-          <img src="Images/cert (1).png" alt="Certificate 1">
-          <img src="Images/cert (2).png" alt="Certificate 2">
-          <img src="Images/cert (3).png" alt="Certificate 3">
-        </div>
-      </div>
-      <!-- Carousel Controls -->
-      <button class="carousel-btn prev">‹</button>
-      <button class="carousel-btn next">›</button>
-    </div>
+                <div class="top-event">
+                    <h3>Top Event</h3>
+                    <div class="top-event-card">
+                        <img src="Images/kaogma.png" alt="" />
+                        <div class="top-event-info">
+                            <h4>MS. KAOGMA</h4>
+                            <h5>2023</h5>
+                            <p>Capitol Grounds, Pili, Camarines Sur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <div class="top-event">
-      <h3>Top Event</h3>
-      <div class="top-event-card">
-        <img src="Images/kaogma.png" alt="">
-        <div class="top-event-info">
-          <h4>MS. KAOGMA</h4>
-          <h5>2023</h5>
-          <p>Capitol Grounds, Pili, Camarines Sur</p>
-        </div>
-      </div>
-    </div>
-  </div>
+            <!-- RIGHT COLUMN -->
+            <div class="right">
+                <div class="event-list">
+                    <div class="event-header">
+                        <h3>Event</h3>
+                        <a href="#" class="view-all">View All →</a>
+                    </div>
 
-  <!-- RIGHT COLUMN -->
-  <div class="right">
-    <div class="event-list">
-      <div class="event-header">
-        <h3>Event</h3>
-        <a href="#" class="view-all">View All →</a>
-      </div>
+                    <ul>
+                        <li>
+                            <img src="Images/event icon 1.png" alt="" />
+                            <div>
+                                <h4>Miss Bato 2023</h4>
+                                <p>July 25, 2023 – 6:00 PM</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="Images/event icon 2.png" alt="" />
+                            <div>
+                                <h4>Queen of the Universe 2023</h4>
+                                <p>June 2, 2023 – 8:00 PM</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="Images/event icon 3.png" alt="" />
+                            <div>
+                                <h4>MR. AND MS. SAN AGUSTIN 2023</h4>
+                                <p>May 24, 2023 – 8:00 PM</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
-      <ul>
-        <li>
-          <img src="Images/event icon 1.png" alt="">
-          <div>
-            <h4>Miss Bato 2023</h4>
-            <p>July 25, 2023 – 6:00 PM</p>
-          </div>
-        </li>
-        <li>
-          <img src="Images/event icon 2.png" alt="">
-          <div>
-            <h4>Queen of the Universe 2023</h4>
-            <p>June 2, 2023 – 8:00 PM</p>
-          </div>
-        </li>
-        <li>
-          <img src="Images/event icon 3.png" alt="">
-          <div>
-            <h4>MR. AND MS. SAN AGUSTIN 2023</h4>
-            <p>May 24, 2023 – 8:00 PM</p>
-          </div>
-        </li>
-      </ul>
-    </div>
+                <div class="upcoming-event">
+                    <h3>Upcoming Event</h3>
+                    <div class="card">
+                        <div class="date-dot"></div>
+                        <p>---</p>
+                        <button>Pre Book</button>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="upcoming-event">
-      <h3>Upcoming Event</h3>
-      <div class="card">
-        <div class="date-dot"></div>
-        <p>---</p>
-        <button>Pre Book</button>
-      </div>
-    </div>
-  </div>
-</section>
+        <!-- Event Section -->
+        <section id="event-section" class="event-collection">
+            <div class="collection-header">
+                <h2>Event</h2>
+            </div>
 
+            <div class="event-grid">
+                <div class="event-card">
+                    <div class="tags">
+                        <span class="tag purple">Event</span>
+                        <span class="tag green">Foundation Anniversary</span>
+                    </div>
+                    <h3>Little Miss Nabua The Pageant</h3>
+                    <p>
+                        ACLC College Iriga is delighted and grateful to have been chosen as the official tabulator for
+                        the much-awaited Little Miss Nabua The Pageant 2023, as part of the celebration for the 454th
+                        Foundation Anniversary of The Local Government Unit of NABUA. We sincerely thank the organizers
+                        for granting us this fantastic chance to be a part of this special event!
+                    </p>
+                </div>
 
-  <!-- Event Section --> 
-  <section id="event-section" class="event-collection">
-  <div class="collection-header">
-    <h2>Event </h2>
-  </div>
+                <div class="event-card">
+                    <div class="tags">
+                        <span class="tag yellow">Event</span>
+                        <span class="tag blue">Festival</span>
+                    </div>
+                    <h3>Miss Kaogma 2023</h3>
+                    <p>
+                        ACLC College Iriga has successfully completed the tabulation of Miss Kaogma 2023.
+                        Congratulations to all the winners, and a big cheer to the organizers for a truly successful
+                        event!
+                    </p>
+                </div>
 
-  <div class="event-grid">
-    <div class="event-card">
-      <div class="tags">
-        <span class="tag purple">Event</span>
-        <span class="tag green">Foundation Anniversary</span>
-      </div>
-      <h3>Little Miss Nabua The Pageant</h3>
-      <p>ACLC College Iriga is delighted and grateful to have been chosen as the official tabulator for the much-awaited Little Miss Nabua The Pageant 2023, as part of the celebration for the 454th Foundation Anniversary of The Local Government Unit of NABUA.
-We sincerely thank the organizers for granting us this fantastic chance to be a part of this special event!</p>
-    </div>
+                <div class="event-card">
+                    <div class="tags">
+                        <span class="tag orange">Event</span>
+                        <span class="tag green">Festival</span>
+                    </div>
+                    <h3>MR. AND MS. SAN AGUSTIN 2023</h3>
+                    <p>
+                        Huge thanks to the Sangguniang Kabataan San Agustin for inviting ACLC College Iriga to serve as
+                        the official tabulator for MR. AND MS. SAN AGUSTIN 2023. As a result, we now have a fork for
+                        these kinds of competition format:
+                    </p>
+                </div>
 
-    <div class="event-card">
-      <div class="tags">
-        <span class="tag yellow">Event</span>
-        <span class="tag blue">Festival</span>
-      </div>
-      <h3>Miss Kaogma 2023</h3>
-      <p>ACLC College Iriga has successfully completed the tabulation of Miss Kaogma 2023. Congratulations to all the winners, and a big cheer to the organizers for a truly successful event!</p>
-    </div>
+                <div class="event-card">
+                    <div class="tags">
+                        <span class="tag purple">Event</span>
+                    </div>
+                    <h3>Miss Bato 2023</h3>
+                    <p>
+                        As the OFFICIAL TABULATOR of Miss bato 2023, ACLC College Iriga extends our heartfelt gratitude
+                        and appreciation to the organizers for entrusting us with this role!
+                    </p>
+                </div>
 
-    <div class="event-card">
-      <div class="tags">
-        <span class="tag orange">Event</span>
-        <span class="tag green">Festival</span>
-      </div>
-      <h3>MR. AND MS. SAN AGUSTIN 2023</h3>
-      <p>Huge thanks to the Sangguniang Kabataan San Agustin for inviting ACLC College Iriga to serve as the official tabulator for MR. AND MS. SAN AGUSTIN 2023. As a result, we now have a fork for these kinds of competition format:</p>
-    </div>
+                <div class="event-card">
+                    <div class="tags">
+                        <span class="tag yellow">Event</span>
+                    </div>
+                    <h3>Queen of the Universe 2023</h3>
+                    <p>
+                        We would like to thank the Diverse Society Of San Nicolas for inviting ACLC College Iriga as the
+                        official tabulator of Queen of the Universe 2023.
+                    </p>
+                </div>
 
-    <div class="event-card">
-      <div class="tags">
-        <span class="tag purple">Event</span>
-      </div>
-      <h3>Miss Bato 2023</h3>
-      <p>As the OFFICIAL TABULATOR of Miss bato 2023, ACLC College Iriga extends our heartfelt gratitude and appreciation to the organizers for entrusting us with this role!</p>
-    </div>
+                <div class="event-card">
+                    <div class="tags">
+                        <span class="tag orange">Event</span>
+                        <span class="tag green">Festival</span>
+                    </div>
+                    <h3>Nabua Civic Parade for Pintakasi 2023</h3>
+                    <p>
+                        We had a great time tabulating the Nabua Civic Parade for Pintakasi 2023 at The Local Government
+                        Unit of NABUA! We thank the event organizers for inviting ACLC College Iriga to be a part of
+                        this amazing event.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <div class="event-card">
-      <div class="tags">
-        <span class="tag yellow">Event</span>
-      </div>
-      <h3>Queen of the Universe 2023</h3>
-      <p>We would like to thank the Diverse Society Of San Nicolas for inviting ACLC College Iriga as the official tabulator of Queen of the Universe 2023.</p>
-    </div>
-
-    <div class="event-card">
-      <div class="tags">
-        <span class="tag orange">Event</span>
-        <span class="tag green">Festival</span>
-      </div>
-      <h3>Nabua Civic Parade for Pintakasi 2023</h3>
-      <p>We had a great time tabulating the Nabua Civic Parade for Pintakasi 2023 at  The Local Government Unit of NABUA! We thank the event organizers for inviting ACLC College Iriga to be a part of this amazing event.</p>
-    </div>
-  </div>
-</section>
-
-  <!-- Event Collection Section -->
-<section id="collection" class="event-collection">
-  <div class="collection-header">
-    <h2>Event Collection</h2>
-    <!--<button class="filter-btn">
+        <!-- Event Collection Section -->
+        <section id="collection" class="event-collection">
+            <div class="collection-header">
+                <h2>Event Collection</h2>
+                <!--<button class="filter-btn">
       <i class="fa-solid fa-filter"></i> Filter
     </button>-->
-  </div>
+            </div>
 
-  <div class="event-grid">
-    <!-- Card 1 -->
-    <div class="event-card">
-      <div class="event-image">
-        <img src="Images/event coll 1.png" alt="Little Miss Nabua">
-        <span class="event-date">July<br>25</span>
-      </div>
-      <div class="event-content">
-        <h3>Little Miss Nabua The Pageant</h3>
-        <p>Nabua, Camarines Sur</p>
-      </div>
-    </div>
+            <div class="event-grid">
+                <!-- Card 1 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="Images/event coll 1.png" alt="Little Miss Nabua" />
+                        <span class="event-date">July<br />25</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Little Miss Nabua The Pageant</h3>
+                        <p>Nabua, Camarines Sur</p>
+                    </div>
+                </div>
 
-    <!-- Card 2 -->
-    <div class="event-card">
-      <div class="event-image">
-        <img src="Images/event coll 2.png" alt="Miss Kaogma 2023">
-        <span class="event-date">May<br>24</span>
-      </div>
-      <div class="event-content">
-        <h3>Miss Kaogma 2023</h3>
-        <p>Capitol Grounds, Pili, Camarines Sur</p>
-      </div>
-    </div>
+                <!-- Card 2 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="Images/event coll 2.png" alt="Miss Kaogma 2023" />
+                        <span class="event-date">May<br />24</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Miss Kaogma 2023</h3>
+                        <p>Capitol Grounds, Pili, Camarines Sur</p>
+                    </div>
+                </div>
 
-    <!-- Card 3 -->
-    <div class="event-card">
-      <div class="event-image">
-        <img src="Images/event coll 3.png" alt="MR. AND MS. SAN AGUSTIN 2023">
-        <span class="event-date">May<br>3</span>
-      </div>
-      <div class="event-content">
-        <h3>MR. AND MS. SAN AGUSTIN 2023</h3>
-        <p>San Agustin, Camarines Sur</p>
-      </div>
-    </div>
+                <!-- Card 3 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="Images/event coll 3.png" alt="MR. AND MS. SAN AGUSTIN 2023" />
+                        <span class="event-date">May<br />3</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>MR. AND MS. SAN AGUSTIN 2023</h3>
+                        <p>San Agustin, Camarines Sur</p>
+                    </div>
+                </div>
 
-    <!-- Card 4 -->
-    <div class="event-card">
-      <div class="event-image">
-        <img src="Images/event coll 4.png" alt="Miss Bato 2023">
-        <span class="event-date">June<br>2</span>
-      </div>
-      <div class="event-content">
-        <h3>Miss Bato 2023</h3>
-        <p>Bato, Camarines Sur</p>
-      </div>
-    </div>
+                <!-- Card 4 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="Images/event coll 4.png" alt="Miss Bato 2023" />
+                        <span class="event-date">June<br />2</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Miss Bato 2023</h3>
+                        <p>Bato, Camarines Sur</p>
+                    </div>
+                </div>
 
-    <!-- Card 5 -->
-    <div class="event-card">
-      <div class="event-image">
-        <img src="Images/event coll 5.png" alt="Queen of the Universe">
-        <span class="event-date">May<br>7</span>
-      </div>
-      <div class="event-content">
-        <h3>Queen of the Universe 2023</h3>
-        <p>San Nicolas, Camarines Sur</p>
-      </div>
-    </div>
+                <!-- Card 5 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="Images/event coll 5.png" alt="Queen of the Universe" />
+                        <span class="event-date">May<br />7</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Queen of the Universe 2023</h3>
+                        <p>San Nicolas, Camarines Sur</p>
+                    </div>
+                </div>
 
-    <!-- Card 6 -->
-    <div class="event-card">
-      <div class="event-image">
-        <img src="Images/event coll 6.png" alt="Nabua Civic Parade">
-        <span class="event-date">April<br>30</span>
-      </div>
-      <div class="event-content">
-        <h3>Nabua Civic Parade for Pintakasi 2023</h3>
-        <p>Nabua, Camarines Sur</p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- footer section start -->
-		<footer>
-			<p>©
-				<span id="year"></span>
-				EG. All rights reserved.</p>
-		</footer>
+                <!-- Card 6 -->
+                <div class="event-card">
+                    <div class="event-image">
+                        <img src="Images/event coll 6.png" alt="Nabua Civic Parade" />
+                        <span class="event-date">April<br />30</span>
+                    </div>
+                    <div class="event-content">
+                        <h3>Nabua Civic Parade for Pintakasi 2023</h3>
+                        <p>Nabua, Camarines Sur</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- footer section start -->
+        <footer>
+            <p>
+                ©
+                <span id="year"></span>
+                EG. All rights reserved.
+            </p>
+        </footer>
 
-    <script src="js/main.js"></script>
+        <script src="js/main.js"></script>
 
-    <script>
+        <script>
             document.getElementById("year").textContent = new Date().getFullYear();
-        
-		</script>
+        </script>
 
-    <script>
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".sidebar-icons a");
+        <script>
+            const sections = document.querySelectorAll("section");
+            const navLinks = document.querySelectorAll(".sidebar-icons a");
 
-window.addEventListener("scroll", () => {
-  let current = "";
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 150;
-    if (scrollY >= sectionTop) {
-      current = section.getAttribute("id");
-    }
-  });
+            window.addEventListener("scroll", () => {
+                let current = "";
+                sections.forEach((section) => {
+                    const sectionTop = section.offsetTop - 150;
+                    if (scrollY >= sectionTop) {
+                        current = section.getAttribute("id");
+                    }
+                });
 
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href") === "#" + current) {
-      link.classList.add("active");
-    }
-  });
-});
-</script>
-
-
-</body>
+                navLinks.forEach((link) => {
+                    link.classList.remove("active");
+                    if (link.getAttribute("href") === "#" + current) {
+                        link.classList.add("active");
+                    }
+                });
+            });
+        </script>
+    </body>
 </html>
