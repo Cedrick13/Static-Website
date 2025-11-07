@@ -1,3 +1,6 @@
+/* ===== 1-721: Full CSS (replace your current file) ===== */
+
+/* Basic reset and fonts */
 * {
     margin: 0;
     padding: 0;
@@ -8,14 +11,15 @@
 body {
     background: #fafafa;
     color: #222;
+    /* Desktop left offset to account for sidebar (kept for >768px screens) */
+    margin-left: 80px;
+    transition: margin-left 0.3s ease;
 }
 
-.right {
-    margin-top: 20px; /* optional */
-}
-
-.left {
-    margin-top: 20px;
+/* Utility: wrapper for page main content (if you have <main> or .content use it) */
+.main-content {
+    transition: transform 0.3s ease, margin-left 0.3s ease;
+    /* fallback: nothing forced here; desktop gets margin-left via body */
 }
 
 /* ===== Layout ===== */
@@ -42,13 +46,6 @@ body {
     gap: 25px;
 }
 
-/* Make it responsive */
-@media (max-width: 992px) {
-    .home-section {
-        grid-template-columns: 1fr;
-    }
-}
-
 /* ===== Sidebar ===== */
 .sidebar {
     position: fixed;
@@ -64,8 +61,15 @@ body {
     padding: 15px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     z-index: 100;
+    transition: left 0.3s ease, transform 0.3s ease;
 }
 
+/* Mobile variant width (used when it slides in) */
+.sidebar--expanded {
+    width: 220px;
+}
+
+/* Logo area */
 .sidebar-logo img {
     width: 60px;
     height: auto;
@@ -101,9 +105,11 @@ body {
     transform: scale(1.1);
 }
 
-/* Adjust main content to not hide behind sidebar */
-body {
-    margin-left: 80px;
+.sidebar-icons a.active img {
+    opacity: 1;
+    transform: scale(1.2);
+    border: 2px solid #4f46e5;
+    border-radius: 10px;
 }
 
 /* ===== Certificate Carousel (Resized & Clean) ===== */
@@ -156,6 +162,7 @@ body {
     z-index: 2;
 }
 
+/* Hide by default; toggle display via JS if desired */
 .carousel-btn {
     display: none;
 }
@@ -335,34 +342,7 @@ body {
     background: #f9fafb;
 }
 
-.collection-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
-}
-
-.collection-header h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #222;
-}
-
-/* ===== Grid Layout ===== */
-.event-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-}
-
-/* ===== Card Style ===== */
-.event-collection {
-    padding: 40px 6%;
-    background: #f9fafb;
-    min-height: 100vh;
-}
-
+/* Collection header */
 .collection-header {
     display: flex;
     align-items: center;
@@ -448,53 +428,7 @@ body {
     background: #ff9800;
 }
 
-/* ===== Event ===== */
-.event-collection {
-    padding: 40px 6%;
-    background: #f9fafb;
-    min-height: auto; /* ✅ Let it adapt to content */
-    margin-top: 20px; /* Optional: small spacing above */
-}
-
-.collection-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 30px;
-}
-
-.collection-header h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    color: #111;
-}
-
-.filter-btn {
-    background: #4f46e5;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: background 0.3s;
-}
-
-.filter-btn:hover {
-    background: #4338ca;
-}
-
-/* ===== Grid Layout ===== */
-.event-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-}
-
-/* ===== Card Style ===== */
+/* ===== Event Card (alternate) ===== */
 .event-card {
     background: #fff;
     border-radius: 18px;
@@ -510,7 +444,7 @@ body {
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
 }
 
-/* ===== Image & Date ===== */
+/* ===== Image & Date in card ===== */
 .event-image {
     position: relative;
     width: 100%;
@@ -560,13 +494,6 @@ html {
     scroll-behavior: smooth;
 }
 
-.sidebar-icons a.active img {
-    opacity: 1;
-    transform: scale(1.2);
-    border: 2px solid #4f46e5;
-    border-radius: 10px;
-}
-
 /* footer section styling */
 footer {
     background: #111;
@@ -597,47 +524,101 @@ footer span a:hover {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* ===== Sidebar (responsive) ===== */
+/* ===== Overlay for mobile sidebar ===== */
+.sidebar-overlay {
+    display: none;                /* toggled by JS */
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: 90;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+/* ===== Responsive Fix ===== */
+@media (max-width: 900px) {
+  .home-section {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .left img {
+    max-height: 100px;
+  }
+
+  .right {
+    gap: 20px;
+  }
+}
+
+/* ===== Sidebar (responsive behavior) ===== */
 @media (max-width: 768px) {
+
+    /* Make sidebar a sliding panel that overlays content */
     .sidebar {
-        position: fixed;
-        left: -250px; /* Hidden by default */
-        width: 220px;
-        transition: left 0.3s ease;
+        left: -220px;             /* hidden to left */
+        width: 220px;            /* full width when opened */
+        border-right: 0;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     }
 
+    /* When active, slide it in (use JS to add `.active` class) */
     .sidebar.active {
-        left: 0; /* Slide in when active */
+        left: 0;
+        transform: translateX(0);
     }
 
+    /* We must remove the global body margin on mobile so main content isn't shifted */
+    body {
+        margin-left: 0;
+    }
+
+    /* Show hamburger button on mobile */
     .hamburger {
         display: block;
     }
+
+    /* Show overlay when sidebar is active (toggle via JS classes) */
+    .sidebar-overlay.show {
+        display: block;
+        opacity: 1;
+    }
+
+    /* Ensure main content isn't hidden behind default left margin */
+    .main-content,
+    .home-section,
+    .event-collection {
+        /* keep full width; sidebar will overlay */
+        width: 100%;
+    }
+
+    /* Small-screen adjustments */
+    .collection-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .filter-btn {
+        width: 100%;
+    }
+
+    .event-card {
+        width: 100%;
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    .event-collection {
+        padding: 20px 3%;
+    }
+
 }
 
-/* ===== Responsive Layout ===== */
+/* ===== Responsive Layout (other breakpoints) ===== */
 @media (max-width: 1024px) {
   .event-collection {
     padding: 20px 4%;
-  }
-}
-
-@media (max-width: 768px) {
-  /* Stack cards vertically */
-  .event-card {
-    width: 100%;
-    max-width: 100%;
-    margin: 10px 0;
-  }
-
-  .event-collection {
-    padding: 20px 3%;
-  }
-
-  .collection-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
   }
 }
 
@@ -665,57 +646,10 @@ footer span a:hover {
   }
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-    .collection-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-
-    .filter-btn {
-        width: 100%;
-    }
+/* final tweaks to avoid accidental overlapping */
+.sidebar,
+.hamburger {
+    -webkit-tap-highlight-color: transparent;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-    .collection-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .search-bar {
-        width: 100%;
-    }
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-    .collection-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .search-bar {
-        width: 100%;
-    }
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 992px) {
-    .home-section {
-        flex-direction: column;
-    }
-
-    .left,
-    .right {
-        width: 100%;
-    }
-
-    .image-gallery img {
-        width: 100px;
-    }
-}
+/* end of CSS */
