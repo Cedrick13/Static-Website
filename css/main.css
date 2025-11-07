@@ -1,5 +1,3 @@
-/* ===== 1-721: Full CSS (replace your current file) ===== */
-
 /* Basic reset and fonts */
 * {
     margin: 0;
@@ -18,7 +16,9 @@ body {
 
 /* Utility: wrapper for page main content (if you have <main> or .content use it) */
 .main-content {
-    transition: transform 0.3s ease, margin-left 0.3s ease;
+    transition:
+        transform 0.3s ease,
+        margin-left 0.3s ease;
     /* fallback: nothing forced here; desktop gets margin-left via body */
 }
 
@@ -61,7 +61,9 @@ body {
     padding: 15px 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     z-index: 100;
-    transition: left 0.3s ease, transform 0.3s ease;
+    transition:
+        left 0.3s ease,
+        transform 0.3s ease;
 }
 
 /* Mobile variant width (used when it slides in) */
@@ -114,48 +116,46 @@ body {
 
 /* ===== Certificate Carousel (Compact, One Image) ===== */
 .image-gallery {
-  position: relative;
-  width: 100%;
-  max-width: 650px; /* narrower width for cleaner layout */
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 14px;
-  background: #fff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  padding: 0;
+    position: relative;
+    width: 100%;
+    max-width: 650px; /* narrower width for cleaner layout */
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 0;
 }
 
 /* Container hides overflow */
 .carousel-container {
-  width: 100%;
-  overflow: hidden;
-  border-radius: 14px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 14px;
 }
 
 /* Track (horizontal slider) */
 .carousel-track {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
+    display: flex;
+    transition: transform 0.6s ease-in-out;
 }
 
 /* Show exactly one image at a time */
 .carousel-track img {
-  flex: 0 0 100%;
-  width: 100%;
-  max-height: 250px;
-  object-fit: cover;
-  border-radius: 14px;
-  display: block;
+    flex: 0 0 100%;
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 14px;
+    display: block;
 }
-
 
 /* Responsive scaling */
 @media (max-width: 768px) {
-  .carousel-track img {
-    height: 180px;
-  }
+    .carousel-track img {
+        height: 180px;
+    }
 }
-
 
 /* Buttons */
 .carousel-btn {
@@ -537,10 +537,10 @@ footer span a:hover {
 
 /* ===== Overlay for mobile sidebar ===== */
 .sidebar-overlay {
-    display: none;                /* toggled by JS */
+    display: none; /* toggled by JS */
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     z-index: 90;
     opacity: 0;
     transition: opacity 0.25s ease;
@@ -548,29 +548,28 @@ footer span a:hover {
 
 /* ===== Responsive Fix ===== */
 @media (max-width: 900px) {
-  .home-section {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
+    .home-section {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 
-  .left img {
-    max-height: 100px;
-  }
+    .left img {
+        max-height: 100px;
+    }
 
-  .right {
-    gap: 20px;
-  }
+    .right {
+        gap: 20px;
+    }
 }
 
 /* ===== Sidebar (responsive behavior) ===== */
 @media (max-width: 768px) {
-
     /* Make sidebar a sliding panel that overlays content */
     .sidebar {
-        left: -220px;             /* hidden to left */
-        width: 220px;            /* full width when opened */
+        left: -220px; /* hidden to left */
+        width: 220px; /* full width when opened */
         border-right: 0;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
 
     /* When active, slide it in (use JS to add `.active` class) */
@@ -623,88 +622,86 @@ footer span a:hover {
     .event-collection {
         padding: 20px 3%;
     }
-
 }
 
 /* === Carousel Responsive Fix === */
 .image-gallery {
-  max-width: 100%;
-  width: 100%;
-  padding: 10px;
+    max-width: 100%;
+    width: 100%;
+    padding: 10px;
 }
 
 .carousel-track img {
-  width: 100%;
-  height: auto; /* allow natural proportion */
-  aspect-ratio: 16 / 9; /* keeps a nice proportion */
-  object-fit: cover;
-  border-radius: 12px;
+    width: 100%;
+    height: auto; /* allow natural proportion */
+    aspect-ratio: 16 / 9; /* keeps a nice proportion */
+    object-fit: cover;
+    border-radius: 12px;
 }
 
 /* For small screens */
 @media (max-width: 768px) {
-  .carousel-track img {
-    aspect-ratio: 16 / 9;
-    height: auto;
-  }
+    .carousel-track img {
+        aspect-ratio: 16 / 9;
+        height: auto;
+    }
 }
 
 /* === Top Event Card Fix === */
 .top-event-card {
-  width: 100%;
-  max-width: 260px;
-  height: auto; /* remove fixed height */
+    width: 100%;
+    max-width: 260px;
+    height: auto; /* remove fixed height */
 }
 
 .top-event-card img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1 / 1; /* keeps square look */
-  object-fit: cover;
-  display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* keeps square look */
+    object-fit: cover;
+    display: block;
 }
 
 /* Make text section stay readable */
 .top-event-info {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 12px;
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-  color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: #fff;
 }
-
 
 /* ===== Responsive Layout (other breakpoints) ===== */
 @media (max-width: 1024px) {
-  .event-collection {
-    padding: 20px 4%;
-  }
+    .event-collection {
+        padding: 20px 4%;
+    }
 }
 
 @media (max-width: 480px) {
-  .event-card img {
-    width: 100%;
-    height: auto;
-  }
+    .event-card img {
+        width: 100%;
+        height: auto;
+    }
 
-  .event-card {
-    padding: 10px;
-  }
+    .event-card {
+        padding: 10px;
+    }
 
-  .event-card h3 {
-    font-size: 1rem;
-  }
+    .event-card h3 {
+        font-size: 1rem;
+    }
 
-  .event-card p {
-    font-size: 0.9rem;
-  }
+    .event-card p {
+        font-size: 0.9rem;
+    }
 
-  footer {
-    font-size: 0.8rem;
-    text-align: center;
-  }
+    footer {
+        font-size: 0.8rem;
+        text-align: center;
+    }
 }
 
 /* final tweaks to avoid accidental overlapping */
@@ -712,5 +709,3 @@ footer span a:hover {
 .hamburger {
     -webkit-tap-highlight-color: transparent;
 }
-
-/* end of CSS */
