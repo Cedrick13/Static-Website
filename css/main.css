@@ -116,13 +116,13 @@ body {
 .image-gallery {
     position: relative;
     width: 100%;
-    max-width: 600px; /* controls overall size */
-    margin: 0 auto; /* centers the carousel */
+    max-width: 650px;         /* slightly wider for certificates */
+    margin: 0 auto;
     overflow: hidden;
-    border-radius: 16px;
-    background: white;
-    padding: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 14px;
+    background: #fff;
+    padding: 6px;             /* minimal inner space */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 /* Outer container that hides overflow */
@@ -139,11 +139,11 @@ body {
 }
 
 .carousel-track img {
-    flex: 0 0 100%; /* each image takes full width */
-    height: 300px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 12px;
+  width: 100%;
+  height: auto;
+  max-height: 320px; /* prevents it from being huge */
+  object-fit: cover;
+  border-radius: 12px;
 }
 
 /* Buttons */
@@ -614,6 +614,56 @@ footer span a:hover {
     }
 
 }
+
+/* === Carousel Responsive Fix === */
+.image-gallery {
+  max-width: 100%;
+  width: 100%;
+  padding: 10px;
+}
+
+.carousel-track img {
+  width: 100%;
+  height: auto; /* allow natural proportion */
+  aspect-ratio: 16 / 9; /* keeps a nice proportion */
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* For small screens */
+@media (max-width: 768px) {
+  .carousel-track img {
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+}
+
+/* === Top Event Card Fix === */
+.top-event-card {
+  width: 100%;
+  max-width: 260px;
+  height: auto; /* remove fixed height */
+}
+
+.top-event-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1; /* keeps square look */
+  object-fit: cover;
+  display: block;
+}
+
+/* Make text section stay readable */
+.top-event-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: #fff;
+}
+
 
 /* ===== Responsive Layout (other breakpoints) ===== */
 @media (max-width: 1024px) {
